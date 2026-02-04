@@ -14,6 +14,7 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden; /* Evita scroll lateral */
 }
 
 .page { width: 100%; min-height: 100vh; }
@@ -45,9 +46,9 @@ body {
 }
 
 /* HERO */
-.hero { text-align: center; margin-top: 40px; }
-.logoHero { width: 220px; }
-.hero h2 { font-family: "Fredoka"; font-size: 55px; }
+.hero { text-align: center; margin-top: 40px; padding: 0 20px; }
+.logoHero { width: 220px; max-width: 100%; }
+.hero h2 { font-family: "Fredoka"; font-size: 55px; margin: 20px 0; }
 
 .btnMain {
   margin-top: 25px;
@@ -59,12 +60,13 @@ body {
   font-weight: bold;
 }
 
-/* SETS CIRCLES - AJUSTADO PARA IMAGENS */
+/* SETS CIRCLES */
 .setsCircle {
   display: flex;
   justify-content: center;
   gap: 60px;
   margin: 70px 0;
+  flex-wrap: wrap; /* Permite empilhar no mobile */
 }
 
 .circle {
@@ -77,7 +79,7 @@ body {
   align-items: center;
   font-size: 40px;
   cursor: pointer;
-  overflow: hidden; /* Corta a imagem no formato circular */
+  overflow: hidden;
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
@@ -90,10 +92,14 @@ body {
 .yellow { border-color: var(--yellow); }
 
 /* INFO GRID */
-.infoGrid { display: flex; justify-content: center; gap: 80px; padding: 0 70px; }
+.infoGrid { 
+  display: flex; 
+  justify-content: center; 
+  gap: 80px; 
+  padding: 0 70px; 
+}
 
-/* AGENDA E CONTACTO */
-.agendaBox, .contactBox { flex: 1; }
+.agendaBox, .contactBox { flex: 1; min-width: 300px; }
 .agendaBox ul { list-style: none; padding: 0; }
 .agendaBox li { margin: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 8px; }
 
@@ -103,6 +109,8 @@ body {
   border-radius: 10px;
   border: 1px solid #ccc;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contactBox button {
@@ -115,7 +123,13 @@ body {
 }
 
 /* GALLERY */
-.gallery { display: flex; justify-content: center; gap: 25px; margin: 70px 0; }
+.gallery { 
+  display: flex; 
+  justify-content: center; 
+  gap: 25px; 
+  margin: 70px 0; 
+  flex-wrap: wrap; 
+}
 .gallery img {
   width: 240px;
   height: 160px;
@@ -125,3 +139,36 @@ body {
 }
 
 .footer { text-align: center; padding: 50px; font-size: 14px; opacity: 0.7; }
+
+/* =============================================
+   AJUSTES PARA MOBILE (TELEMÓVEL) 
+   ============================================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu a { margin: 0 5px; font-size: 14px; }
+
+  .hero h2 { font-size: 35px; }
+
+  .setsCircle { gap: 30px; }
+
+  .infoGrid {
+    flex-direction: column; /* Empilha Agenda e Contacto */
+    padding: 0 20px;
+    gap: 50px;
+  }
+
+  .gallery { padding: 0 20px; }
+  .gallery img { width: 100%; height: auto; }
+}
