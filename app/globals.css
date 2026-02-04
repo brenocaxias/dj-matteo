@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Inter:wght@300;500&display=swap");
+
+:root {
+  --bg: #f6f1e6;
+  --text: #1e2a38;
+
+  --orange: #f28c4b;
+  --yellow: #f6c453;
+  --green: #3fae9a;
+  --blue: #2e5c8a;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 70px;
+  align-items: center;
+}
+
+.brand {
+  font-family: "Fredoka";
+  font-size: 26px;
+}
+
+.menu a {
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.booking {
+  background: var(--orange);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.logoHero {
+  width: 220px;
+}
+
+.hero h2 {
+  font-family: "Fredoka";
+  font-size: 55px;
+}
+
+.btnMain {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: var(--yellow);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SETS */
+.setsCircle {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 70px 0;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 8px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.orange { border-color: var(--orange); }
+.green { border-color: var(--green); }
+.yellow { border-color: var(--yellow); }
+
+/* INFO GRID */
+.infoGrid {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* AGENDA */
+.agendaBox ul {
+  list-style: none;
+  padding: 0;
+}
+
+.agendaBox li {
+  margin: 12px 0;
+}
+
+.btnTicket {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  background: transparent;
+}
+
+/* CONTACT */
+.contactBox form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactBox input,
+.contactBox textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.contactBox button {
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: var(--orange);
+  color: white;
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 70px 0;
+}
+
+.gallery img {
+  width: 240px;
+  height: 160px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 6px solid var(--blue);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+}
