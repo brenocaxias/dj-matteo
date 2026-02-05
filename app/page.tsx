@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     // 1. COLE SEU LINK DO GOOGLE SHEETS (VERSÃO CSV) ABAIXO:
-    const SHEET_URL = "SUA_URL_AQUI_DEVE_TERMINAR_EM_output=csv";
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRO660JBWZTevemVoXgb2E5AkamOASrPTzASJktwaBJX1YhMUHYnuWk0vqB6WrnOh0cBf9hp7ORO49X/pubhtmlhttps://docs.google.com/spreadsheets/d/e/2PACX-1vRO660JBWZTevemVoXgb2E5AkamOASrPTzASJktwaBJX1YhMUHYnuWk0vqB6WrnOh0cBf9hp7ORO49X/pub?output=csv";
 
     fetch(SHEET_URL)
       .then(response => response.text())
