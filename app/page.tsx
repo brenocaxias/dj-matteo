@@ -130,18 +130,18 @@ export default function Home() {
         
         {/* Créditos de Desenvolvimento */}
         <p style={{ fontSize: '14px', opacity: 0.8, marginBottom: '20px' }}>
-          Desenvolvido por <strong>breno caxias</strong>
+          Desenvolvido por <strong>Breno Caxias</strong>
         </p>
 
         {/* Ícones das Redes Sociais do Desenvolvedor */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-          <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+          <a href="https://github.com/brenocaxias" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
             <Github size={20} />
           </a>
-          <a href="https://wa.me/5585989158867" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+          <a href="https://wa.me/5588994047841" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
             <MessageCircle size={20} />
           </a>
-          <a href="https://instagram.com/SEU-INSTA" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+          <a href="https://instagram.com/brenocaxias" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
             <Instagram size={20} />
           </a>
         </div>
