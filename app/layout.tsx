@@ -1,38 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+export const metadata: Metadata = {
+  title: "DJ MATTËO",
+  description: "VAI DAR PRAIA! - Portfólio Oficial",
+};
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  title: "DJ Mattëo",
-  description: "Retro Tropical Vibe",
-  viewport: "width=device-width, initial-scale=1", // Garante o ajuste ao ecrã do telemóvel
+// A configuração de viewport deve ser feita assim agora
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f6f1e6",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="pt-br">
+      <body>{children}</body>
     </html>
   );
-
-  
 }

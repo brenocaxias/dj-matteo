@@ -1,3 +1,5 @@
+"use client"; // Esta linha corrige o erro de "Event handlers"
+
 import React from 'react';
 
 export default function Home() {
@@ -8,108 +10,101 @@ export default function Home() {
   ];
 
   return (
-    <div className="page">
+    <div className="page" style={{ overflowX: 'hidden' }}>
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="brand">DJ MATTËO</div>
         <div className="menu">
           <a href="#sobre">SOBRE</a>
+          <a href="#underground">UNDERGROUND</a>
+          <a href="#experiencia">EXPERIÊNCIA</a>
           <a href="#sets">SETS</a>
           <a href="#agenda">AGENDA</a>
-          <a href="#fotos">FOTOS</a>
-          <button className="booking">BOOKING</button>
+          <button className="booking" onClick={() => window.open('https://wa.me/SEU_NUMERO', '_blank')}>BOOKING</button>
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section className="hero">
         <img src="/logo.png" alt="DJ Mattëo Logo" className="logoHero" />
-        <h2>VAI DAR PRAIA!</h2>
-        <p>DISCO MUSIC • BRASILIDADES • AFRO • NU FUNK • HOUSE MUSIC</p>
-        <button className="btnMain">OUVIR ÚLTIMO SET</button>
+        <h2 style={{ fontSize: 'clamp(40px, 8vw, 70px)', lineHeight: '1' }}>VAI DAR PRAIA!</h2>
+        <p style={{ margin: '20px 0', fontWeight: '500', letterSpacing: '2px' }}>
+          DISCO MUSIC • BRASILIDADES • AFRO • NU FUNK • HOUSE MUSIC
+        </p>
+        <button className="btnMain" onClick={() => document.getElementById('sets')?.scrollIntoView({ behavior: 'smooth' })}>
+          OUVIR ÚLTIMO SET
+        </button>
       </section>
 
-      {/* SOBRE MIM */}
-      <section id="sobre" style={{ padding: '80px 70px' }}>
-        <div className="infoGrid" style={{ alignItems: 'center' }}>
-          <div style={{ flex: 1 }}>
-            <img 
-              src="/dj.png" 
-              alt="DJ Mattëo" 
-              style={{ width: '100%', borderRadius: '25px', border: '8px solid var(--green)', boxShadow: '20px 20px 0 var(--yellow)' }} 
-            />
+      {/* 1. O GROOVE DO LITORAL (Foto tricot/praia) */}
+      <section id="sobre" style={{ padding: '80px 20px' }}>
+        <div className="infoGrid" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ flex: '1 1 400px' }}>
+            <img src="/dj.png" alt="DJ Mattëo Litoral" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--green)', boxShadow: '15px 15px 0 var(--yellow)' }} />
           </div>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--blue)', marginBottom: '20px' }}>
-              O GROOVE DO LITORAL
-            </h3>
+          <div style={{ flex: '1 1 400px', textAlign: 'left' }}>
+            <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--blue)', marginBottom: '20px' }}>O GROOVE DO LITORAL</h3>
             <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
-              Matteo é uma figura excêntrica na cena eletrônica de Fortaleza, trazendo uma abordagem pelutante e experimental dentro de cada set. Com uma curadoria que desafia padrões, ele conecta estilos, eras, e continentes, criando uma experiência sonora que é ao mesmo tempo nostálgica e inovadora.
-Com influências que atravessam soul, disco, funk e boogie brasileiro, mesclando sons orgânicos do Oriente ao Ocidente e africano, trazendo um compilado de batidas eletrônicas, D`Matt constrói pontes entre ritmos e gerações. Trabalhando semprem em uma busca por conexões genuinamente Tropicais, onde o mar se torna uma casa, e cada acorde abre uma nova janela para o sentir.
-Na cena de Fortaleza, D` Matt é mais do que um artista: é um guia que desafia a lógica e entrega ao público uma experiência que transcendental.
-            </p>
-            <p style={{ fontSize: '18px', lineHeight: '1.8', marginTop: '15px' }}>
-              Transformamos cada set numa jornada tropical inesquecível, onde o ritmo dita a alma.
+              Matteo traz uma abordagem pulsante e experimental dentro de cada set. Conectando estilos e continentes, cria uma experiência sonora nostálgica e inovadora onde o mar se torna casa.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SETS (CÍRCULOS COM IMAGEM E LINK) */}
-      <section id="sets" className="setsCircle">
-        <a 
-          href="https://soundcloud.com/user-470418825/fogo-mar-um-tanto-quanto-tropicaliente-dmatt" 
-          target="_blank" 
-          className="circle orange" 
-          style={{ backgroundImage: 'url("/set1.jpeg")' }}
-        >
-          <span style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '50%' }}>▶</span>
-        </a>
-        <a 
-          href="https://soundcloud.com/user-470418825/sou-brasileiro" 
-          target="_blank" 
-          className="circle green" 
-          style={{ backgroundImage: 'url("/set2.jpeg")' }}
-        >
-          <span style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '50%' }}>▶</span>
-        </a>
-        <a 
-          href="https://soundcloud.com/user-470418825/tropical-system" 
-          target="_blank" 
-          className="circle yellow" 
-          style={{ backgroundImage: 'url("/set3.jpeg")' }}
-        >
-          <span style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '50%' }}>▶</span>
-        </a>
+      {/* 2. CENA UNDERGROUND */}
+      <section id="underground" style={{ padding: '80px 20px', backgroundColor: '#fff' }}>
+        <div className="infoGrid" style={{ display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ flex: '1 1 400px', textAlign: 'left' }}>
+            <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--orange)', marginBottom: '20px' }}>PRESENÇA UNDERGROUND</h3>
+            <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
+              Explorando as texturas mais densas da música eletrônica, Mattëo se destaca pela curadoria que desafia padrões, unindo a força do underground com a alma tropical de Fortaleza.
+            </p>
+          </div>
+          <div style={{ flex: '1 1 400px' }}>
+            <img src="/foto-underground.jpg" alt="Cena Underground" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--blue)' }} />
+          </div>
+        </div>
       </section>
 
-      {/* INFO GRID (AGENDA E CONTACTO) */}
-      <section className="infoGrid" style={{ marginBottom: '80px' }}>
-        <div className="agendaBox" id="agenda">
-          <h3 style={{ fontFamily: 'Fredoka', fontSize: '28px', marginBottom: '20px' }}>AGENDA</h3>
+      {/* 3. EXPERIÊNCIA (FOTOS P&B) */}
+      <section id="experiencia" style={{ padding: '80px 20px', textAlign: 'center' }}>
+        <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', marginBottom: '40px' }}>EXPERIÊNCIA & PLANO ABERTO</h3>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <img src="/evento-pb.jpg" alt="Experiência Evento" style={{ width: '100%', filter: 'grayscale(100%)', borderRadius: '15px', border: '1px solid #ddd' }} />
+          <p style={{ marginTop: '20px', fontSize: '18px', fontStyle: 'italic' }}>
+            "Relato sobre a conexão transcendental com o público e a energia do palco."
+          </p>
+        </div>
+      </section>
+
+      {/* 5. SETS (SoundCloud) */}
+      <section id="sets" className="setsCircle" style={{ padding: '60px 20px' }}>
+        <a href="LINK_SOUNDCLOUD_1" target="_blank" className="circle orange" style={{ backgroundImage: 'url("/set1.jpeg")' }}>▶</a>
+        <a href="LINK_SOUNDCLOUD_2" target="_blank" className="circle green" style={{ backgroundImage: 'url("/set2.jpeg")' }}>▶</a>
+        <a href="LINK_SOUNDCLOUD_3" target="_blank" className="circle yellow" style={{ backgroundImage: 'url("/set3.jpeg")' }}>▶</a>
+      </section>
+
+      {/* 6. AGENDA E CONTATOS */}
+      <section id="agenda" className="infoGrid" style={{ padding: '80px 20px' }}>
+        <div className="agendaBox">
+          <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>AGENDA</h3>
           <ul>
             {tourDates.map((gig, index) => (
-              <li key={index}>
-                <span style={{ color: 'var(--orange)', fontWeight: 'bold' }}>{gig.date}</span> — {gig.venue} ({gig.city})
-              </li>
+              <li key={index}><strong>{gig.date}</strong> — {gig.venue} ({gig.city})</li>
             ))}
           </ul>
         </div>
-
         <div className="contactBox" id="contato">
-          <h3 style={{ fontFamily: 'Fredoka', fontSize: '28px', marginBottom: '20px' }}>BOOKING</h3>
-          <form>
-            <input type="text" placeholder="Nome Completo" />
-            <input type="email" placeholder="E-mail" />
-            <textarea placeholder="Detalhes do evento (Data, Local...)" rows={4}></textarea>
-            <button type="button">SOLICITAR ORÇAMENTO</button>
-          </form>
+          <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>BOOKING & LINKS</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px' }}>
+            <a href="https://instagram.com/SEU_USER" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
+            <a href="https://wa.me/SEU_NUMERO" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--green)' }}>WHATSAPP</a>
+            <a href="LINK_MAPA" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--blue)' }}>MAPA CULTURAL</a>
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="footer">
-        <div style={{ marginBottom: '20px', fontSize: '24px' }}>📸 🎵 🎧</div>
         <p>© 2024 DJ MATTËO • FORTALEZA, BRASIL</p>
       </footer>
     </div>
