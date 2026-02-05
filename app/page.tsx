@@ -42,11 +42,13 @@ export default function Home() {
           <div style={{ flex: '1 1 400px' }}>
             <img src="/praia.jpeg" alt="DJ Mattëo Litoral" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--green)', boxShadow: '15px 15px 0 var(--yellow)' }} />
           </div>
-          <div style={{ flex: '1 1 400px', textAlign: 'left' }}>
+          <div style={{ flex: '1 1 400px', textAlign: 'justify' }}>
             <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--blue)', marginBottom: '20px' }}>O GROOVE DO LITORAL</h3>
             <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
-              Matteo traz uma abordagem pulsante e experimental dentro de cada set. Conectando estilos e continentes, cria uma experiência sonora nostálgica e inovadora onde o mar se torna casa.
-            </p>
+
+                Matteo é uma figura excêntrica na cena eletrônica de Fortaleza, trazendo uma abordagem pelutante e experimental dentro de cada set. Com uma curadoria que desafia padrões, ele conecta estilos, eras, e continentes, criando uma experiência sonora que é ao mesmo tempo nostálgica e inovadora.
+                Com influências que atravessam soul, disco, funk e boogie brasileiro, mesclando sons orgânicos do Oriente ao Ocidente e africano, trazendo um compilado de batidas eletrônicas, MATTEO constrói pontes entre ritmos e gerações. Trabalhando semprem em uma busca por conexões genuinamente Tropicais, onde o mar se torna uma casa, e cada acorde abre uma nova janela para o sentir.
+               Na cena musical de Fortaleza, Matteo é mais do que um artista: é um guia que desafia a lógica e entrega ao público uma experiência que mais que transcendental.            </p>
           </div>
         </div>
       </section>
@@ -66,22 +68,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. EXPERIÊNCIA (FOTOS P&B) */}
+      {/* 3. EXPERIÊNCIA (FOTOS P&B LADO A LADO) */}
       <section id="experiencia" style={{ padding: '80px 20px', textAlign: 'center' }}>
         <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', marginBottom: '40px' }}>EXPERIÊNCIA & PLANO ABERTO</h3>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <img src="/evento-pb.jpg" alt="Experiência Evento" style={{ width: '100%', filter: 'grayscale(100%)', borderRadius: '15px', border: '1px solid #ddd' }} />
-          <p style={{ marginTop: '20px', fontSize: '18px', fontStyle: 'italic' }}>
-            "Relato sobre a conexão transcendental com o público e a energia do palco."
+        
+        {/* Container das Fotos */}
+        <div style={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          gap: '20px', 
+          justifyContent: 'center', 
+          maxWidth: '1200px', 
+          margin: '0 auto' 
+        }}>
+          <img src="/pb.jpeg" alt="Experiência 1" style={{ flex: '1 1 300px', maxWidth: '380px', filter: 'grayscale(100%)', borderRadius: '15px', border: '1px solid #ddd', objectFit: 'cover' }} />
+          <img src="/pb1.jpeg" alt="Experiência 2" style={{ flex: '1 1 300px', maxWidth: '380px', filter: 'grayscale(100%)', borderRadius: '15px', border: '1px solid #ddd', objectFit: 'cover' }} />
+          <img src="/pb3.jpeg" alt="Experiência 3" style={{ flex: '1 1 300px', maxWidth: '380px', filter: 'grayscale(100%)', borderRadius: '15px', border: '1px solid #ddd', objectFit: 'cover' }} />
+        </div>
+
+        {/* Espaço para o Texto Relatando a Experiência */}
+        <div style={{ maxWidth: '850px', margin: '40px auto 0', textAlign: 'justify' }}>
+          <p style={{ fontSize: '18px', lineHeight: '1.8', fontStyle: 'italic' }}>
+            "A conexão transcendental com o público em grandes planos abertos é onde a música se torna um fio condutor de experiências coletivas únicas. Nestes momentos, a energia do palco funde-se com a vibração da pista, criando uma atmosfera onde cada batida é sentida como um batimento cardíaco partilhado."
+          </p>
+        </div>
+      </section>
+
+      {/* 4. METODOLOGIA E CURADORIA */}
+      <section id="curadoria" style={{ padding: '80px 20px', backgroundColor: 'var(--blue)', color: '#fff' }}>
+        <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
+          <h3 style={{ fontFamily: 'Fredoka', fontSize: '30px', marginBottom: '30px' }}>METODOLOGIA & CURADORIA</h3>
+          <p style={{ textAlign: 'justify', fontSize: '18px', lineHeight: '1.8' }}>
+            Minha curadoria musical é um processo meticuloso de garimpo. Não se trata apenas de selecionar faixas, mas de construir uma narrativa que respeite o ambiente e o público. Trabalhamos com a fusão de batidas orgânicas e eletrônicas, onde cada transição é planejada para manter a vibração solar.
           </p>
         </div>
       </section>
 
       {/* 5. SETS (SoundCloud) */}
       <section id="sets" className="setsCircle" style={{ padding: '60px 20px' }}>
-        <a href="LINK_SOUNDCLOUD_1" target="_blank" className="circle orange" style={{ backgroundImage: 'url("/set1.jpeg")' }}>▶</a>
-        <a href="LINK_SOUNDCLOUD_2" target="_blank" className="circle green" style={{ backgroundImage: 'url("/set2.jpeg")' }}>▶</a>
-        <a href="LINK_SOUNDCLOUD_3" target="_blank" className="circle yellow" style={{ backgroundImage: 'url("/set3.jpeg")' }}>▶</a>
+        <a href="https://soundcloud.com/user-470418825/fogo-mar-um-tanto-quanto-tropicaliente-dmatt" target="_blank" className="circle orange" style={{ backgroundImage: 'url("/set1.jpeg")' }}>▶</a>
+        <a href="https://soundcloud.com/user-470418825/sou-brasileiro " target="_blank" className="circle green" style={{ backgroundImage: 'url("/set2.jpeg")' }}>▶</a>
+        <a href="https://soundcloud.com/user-470418825/tropical-system" target="_blank" className="circle yellow" style={{ backgroundImage: 'url("/set3.jpeg")' }}>▶</a>
       </section>
 
       {/* 6. AGENDA E CONTATOS */}
@@ -97,9 +124,9 @@ export default function Home() {
         <div className="contactBox" id="contato">
           <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>BOOKING & LINKS</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px' }}>
-            <a href="https://instagram.com/SEU_USER" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
-            <a href="https://wa.me/SEU_NUMERO" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--green)' }}>WHATSAPP</a>
-            <a href="LINK_MAPA" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--blue)' }}>MAPA CULTURAL</a>
+            <a href="https://www.instagram.com/matteobrunoooo/" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
+            <a href="https://wa.me/5585989158867" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--green)' }}>WHATSAPP</a>
+            <a href="https://mapacultural.secult.ce.gov.br/agente/143996/" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--blue)' }}>MAPA CULTURAL</a>
           </div>
         </div>
       </section>
