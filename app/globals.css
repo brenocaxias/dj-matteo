@@ -29,20 +29,40 @@ body {
 
 .brand { font-family: "Fredoka"; font-size: 26px; }
 
+/* MENU E LINKS */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
 .menu a {
   margin: 0 14px;
   text-decoration: none;
   font-weight: 500;
   color: var(--text);
+  line-height: 1;
 }
 
+/* BOTÃO CONTACT - Ajustado para alinhar e diminuir bordas */
 .booking {
   background: var(--orange);
   border: none;
-  padding: 10px 18px;
+  padding: 8px 16px; /* Borda/espaço interno reduzido */
   border-radius: 25px;
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.booking:hover {
+  transform: scale(1.05);
 }
 
 /* HERO */
@@ -66,7 +86,7 @@ body {
   justify-content: center;
   gap: 60px;
   margin: 70px 0;
-  flex-wrap: wrap; /* Permite empilhar no mobile */
+  flex-wrap: wrap; 
 }
 
 .circle {
@@ -154,17 +174,28 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center; /* Alinha links e botão verticalmente */
     gap: 10px;
   }
 
-  .menu a { margin: 0 5px; font-size: 14px; }
+  .menu a { 
+    margin: 0 5px; 
+    font-size: 14px; 
+    line-height: 1;
+  }
+
+  .booking { 
+    padding: 6px 12px; /* Redução extra no mobile */
+    font-size: 12px; 
+    margin-top: -2px; /* Sobe levemente o botão para alinhar o centro com os textos */
+  }
 
   .hero h2 { font-size: 35px; }
 
   .setsCircle { gap: 30px; }
 
   .infoGrid {
-    flex-direction: column; /* Empilha Agenda e Contacto */
+    flex-direction: column; 
     padding: 0 20px;
     gap: 50px;
   }
