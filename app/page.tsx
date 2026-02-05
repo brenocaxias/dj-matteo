@@ -40,7 +40,7 @@ export default function Home() {
       <section id="sobre" style={{ padding: '80px 20px' }}>
         <div className="infoGrid" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ flex: '1 1 400px' }}>
-            <img src="/dj.png" alt="DJ Mattëo Litoral" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--green)', boxShadow: '15px 15px 0 var(--yellow)' }} />
+            <img src="/praia.jpeg" alt="DJ Mattëo Litoral" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--green)', boxShadow: '15px 15px 0 var(--yellow)' }} />
           </div>
           <div style={{ flex: '1 1 400px', textAlign: 'left' }}>
             <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--blue)', marginBottom: '20px' }}>O GROOVE DO LITORAL</h3>
@@ -61,7 +61,7 @@ export default function Home() {
             </p>
           </div>
           <div style={{ flex: '1 1 400px' }}>
-            <img src="/foto-underground.jpg" alt="Cena Underground" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--blue)' }} />
+            <img src="/dj.png" alt="Cena Underground" style={{ width: '100%', borderRadius: '20px', border: '8px solid var(--blue)' }} />
           </div>
         </div>
       </section>
