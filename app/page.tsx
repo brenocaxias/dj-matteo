@@ -1,15 +1,33 @@
 "use client";
 
-import React from 'react';
-// Importando os ícones para as suas redes sociais
+import React, { useState, useEffect } from 'react';
 import { Github, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Home() {
-  const tourDates = [
-    { date: '05 JUL', venue: 'Blue Jazz Club', city: 'São Paulo' },
-    { date: '12 JUL', venue: 'Sunset Lounge', city: 'Rio de Janeiro' },
-    { date: '18 JUL', venue: 'Praia Beach', city: 'Fortaleza' },
-  ];
+  const [tourDates, setTourDates] = useState<{ date: string, venue: string, city: string }[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // 1. COLE SEU LINK DO GOOGLE SHEETS (VERSÃO CSV) ABAIXO:
+    const SHEET_URL = "SUA_URL_AQUI_DEVE_TERMINAR_EM_output=csv";
+
+    fetch(SHEET_URL)
+      .then(response => response.text())
+      .then(csvText => {
+        const rows = csvText.split('\n').slice(1);
+        const data = rows.map(row => {
+          const [date, venue, city] = row.replace('\r', '').split(',');
+          return { date, venue, city };
+        }).filter(item => item.date);
+        
+        setTourDates(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Erro ao carregar agenda:", err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="page" style={{ overflowX: 'hidden' }}>
@@ -22,7 +40,7 @@ export default function Home() {
           <a href="#experiencia">EXPERIÊNCIA</a>
           <a href="#sets">SETS</a>
           <a href="#agenda">AGENDA</a>
-          <button className="booking" onClick={() => window.open('https://wa.me/5585989158867', '_blank')}>BOOKING</button>
+          <button className="booking" onClick={() => window.open('https://wa.me/5585989158867', '_blank')}>CONTACT</button>
         </div>
       </nav>
 
@@ -62,7 +80,7 @@ export default function Home() {
             <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--orange)', marginBottom: '20px' }}>PRESENÇA UNDERGROUND</h3>
             <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
               A trajetória de DJ Matteo dentro da cena underground de Fortaleza foi lapidada a partir de circulação, escuta e troca. Sua presença em diferentes coletivos e movimentos independentes moldou não apenas sua estética sonora, mas também sua compreensão da pista como espaço cultural e comunitário.
-              Transitanto por núcleos como Festa Lá em Cima, MIRAGE, MASTERPLAN, MORMAÇO, PACIFIC DISCS, MOLESKA GROOVY, VAI TER, além das conexões com Dança e Bronze e Relance, dentre outros coletivos... Matteo absorveu referências que atravessam o disco, o boogie, a house e as sonoridades afro-tropicais, Funky, Nu-funk e batidas organicas, esses ambientes funcionaram como laboratórios vivos, espaços de experimentação, convivência e formação artística.
+              Transitanto por núcleos como Festa Lá em Cima, MIRAGE, MASTERPLAN, MORMAÇO, PACIFIC DISCS, MOLESKA GROOVY, VAI TER, além das conexões com Dança e Bronze e Relance, dentre outros coletivos... Matteo absorveu referências que atravessam o disco, o boogie, a house e as sonoridades afro-tropicais, Funky, Nu-funk e batidas organicas. Esses ambientes funcionaram como laboratórios vivos, espaços de experimentação, convivência e formação artística.
               Essa vivência underground fortaleceu uma curadoria guiada pelo groove, pela pesquisa e pela liberdade criativa. Mais do que circulação em festas e coletivos, trata-se de um percurso que consolidou sua identidade como artista comprometido com a construção de pistas autênticas, onde memória, inovação e pertencimento coexistem.
             </p>
           </div>
@@ -108,14 +126,22 @@ export default function Home() {
       <section id="agenda" className="infoGrid" style={{ padding: '80px 20px' }}>
         <div className="agendaBox">
           <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>AGENDA</h3>
-          <ul>
-            {tourDates.map((gig, index) => (
-              <li key={index}><strong>{gig.date}</strong> — {gig.venue} ({gig.city})</li>
-            ))}
-          </ul>
+          {loading ? (
+            <p>Carregando agenda...</p>
+          ) : (
+            <ul>
+              {tourDates.length > 0 ? (
+                tourDates.map((gig, index) => (
+                  <li key={index}><strong>{gig.date}</strong> — {gig.venue} ({gig.city})</li>
+                ))
+              ) : (
+                <p>Nenhuma data disponível no momento.</p>
+              )}
+            </ul>
+          )}
         </div>
         <div className="contactBox" id="contato">
-          <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>BOOKING & LINKS</h3>
+          <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>CONTACTS & LINKS</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px' }}>
             <a href="https://www.instagram.com/matteobrunoooo/" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
             <a href="https://wa.me/5585989158867" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--green)' }}>WHATSAPP</a>
@@ -124,16 +150,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RODAPÉ ATUALIZADO */}
+      {/* RODAPÉ */}
       <footer className="footer" style={{ padding: '60px 20px', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
         <p style={{ marginBottom: '10px' }}>© 2024 DJ MATTËO • FORTALEZA, BRASIL</p>
         
-        {/* Créditos de Desenvolvimento */}
         <p style={{ fontSize: '14px', opacity: 0.8, marginBottom: '20px' }}>
           Desenvolvido por <strong>Breno Caxias</strong>
         </p>
 
-        {/* Ícones das Redes Sociais do Desenvolvedor */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <a href="https://github.com/brenocaxias" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
             <Github size={20} />
