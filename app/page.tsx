@@ -33,7 +33,7 @@ export default function Home() {
     <div className="page" style={{ overflowX: 'hidden' }}>
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="brand">DJ MATTËO</div>
+        <div className="brand">DJ MAREVA</div>
         <div className="menu">
           <a href="#sobre">SOBRE</a>
           <a href="#underground">UNDERGROUND</a>
