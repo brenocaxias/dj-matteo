@@ -65,9 +65,9 @@ export default function Home() {
           <div style={{ flex: '1 1 400px', textAlign: 'justify' }}>
             <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--blue)', marginBottom: '20px' }}>O GROOVE DO LITORAL</h3>
             <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
-              Matteo é uma figura excêntrica na cena eletrônica de Fortaleza, trazendo uma abordagem pulsante e experimental dentro de cada set. Com uma curadoria que desafia padrões, ele conecta estilos, eras, e continentes, criando uma experiência sonora que é ao mesmo tempo nostálgica e inovadora.
-              Com influências que atravessam soul, disco, funk e boogie brasileiro, mesclando sons orgânicos do Oriente ao Ocidente e africano, trazendo um compilado de batidas eletrônicas, MATTEO constrói pontes entre ritmos e gerações. Trabalhando sempre em uma busca por conexões genuinamente Tropicais, onde o mar se torna uma casa, e cada acorde abre uma nova janela para o sentir.
-              Na cena musical de Fortaleza, Matteo é mais do que um artista: é um guia que desafia a lógica e entrega ao público uma experiência que mais que transcendental.
+              Mareva é uma figura excêntrica na cena eletrônica de Fortaleza, trazendo uma abordagem pulsante e experimental dentro de cada set. Com uma curadoria que desafia padrões, ele conecta estilos, eras, e continentes, criando uma experiência sonora que é ao mesmo tempo nostálgica e inovadora.
+              Com influências que atravessam soul, disco, funk e boogie brasileiro, mesclando sons orgânicos do Oriente ao Ocidente e africano, trazendo um compilado de batidas eletrônicas, Mareva constrói pontes entre ritmos e gerações. Trabalhando sempre em uma busca por conexões genuinamente Tropicais, onde o mar se torna uma casa, e cada acorde abre uma nova janela para o sentir.
+              Na cena musical de Fortaleza, Mareva é mais do que um artista: é um guia que desafia a lógica e entrega ao público uma experiência que mais que transcendental.
             </p>
           </div>
         </div>
@@ -79,8 +79,8 @@ export default function Home() {
           <div style={{ flex: '1 1 400px', textAlign: 'justify' }}>
             <h3 style={{ fontFamily: 'Fredoka', fontSize: '35px', color: 'var(--orange)', marginBottom: '20px' }}>PRESENÇA UNDERGROUND</h3>
             <p style={{ fontSize: '18px', lineHeight: '1.8' }}>
-              A trajetória de DJ Matteo dentro da cena underground de Fortaleza foi lapidada a partir de circulação, escuta e troca. Sua presença em diferentes coletivos e movimentos independentes moldou não apenas sua estética sonora, mas também sua compreensão da pista como espaço cultural e comunitário.
-              Transitanto por núcleos como Festa Lá em Cima, MIRAGE, MASTERPLAN, MORMAÇO, PACIFIC DISCS, MOLESKA GROOVY, VAI TER, além das conexões com Dança e Bronze e Relance, dentre outros coletivos... Matteo absorveu referências que atravessam o disco, o boogie, a house e as sonoridades afro-tropicais, Funky, Nu-funk e batidas organicas. Esses ambientes funcionaram como laboratórios vivos, espaços de experimentação, convivência e formação artística.
+              A trajetória de DJ Mareva dentro da cena underground de Fortaleza foi lapidada a partir de circulação, escuta e troca. Sua presença em diferentes coletivos e movimentos independentes moldou não apenas sua estética sonora, mas também sua compreensão da pista como espaço cultural e comunitário.
+              Transitanto por núcleos como Festa Lá em Cima, MIRAGE, MASTERPLAN, MORMAÇO, PACIFIC DISCS, MOLESKA GROOVY, VAI TER, além das conexões com Dança e Bronze e Relance, dentre outros coletivos... Mareva absorveu referências que atravessam o disco, o boogie, a house e as sonoridades afro-tropicais, Funky, Nu-funk e batidas organicas. Esses ambientes funcionaram como laboratórios vivos, espaços de experimentação, convivência e formação artística.
               Essa vivência underground fortaleceu uma curadoria guiada pelo groove, pela pesquisa e pela liberdade criativa. Mais do que circulação em festas e coletivos, trata-se de um percurso que consolidou sua identidade como artista comprometido com a construção de pistas autênticas, onde memória, inovação e pertencimento coexistem.
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="contactBox" id="contato">
           <h3 style={{ fontFamily: 'Fredoka', marginBottom: '20px' }}>CONTACTS & LINKS</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '30px' }}>
-            <a href="https://www.instagram.com/matteobrunoooo/" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
+            <a href="https://www.instagram.com/Marevabrunoooo/" target="_blank" className="booking" style={{ textDecoration: 'none' }}>INSTAGRAM</a>
             <a href="https://wa.me/5585989158867" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--green)' }}>WHATSAPP</a>
             <a href="https://mapacultural.secult.ce.gov.br/agente/143996/" target="_blank" className="booking" style={{ textDecoration: 'none', background: 'var(--blue)' }}>MAPA CULTURAL</a>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
 
       {/* RODAPÉ */}
       <footer className="footer" style={{ padding: '60px 20px', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
-        <p style={{ marginBottom: '10px' }}>© 2024 DJ MATTËO • FORTALEZA, BRASIL</p>
+        <p style={{ marginBottom: '10px' }}>© 2024 DJ MAREVA • FORTALEZA, BRASIL</p>
         
         <p style={{ fontSize: '14px', opacity: 0.8, marginBottom: '20px' }}>
           Desenvolvido por <strong>Breno Caxias</strong>
